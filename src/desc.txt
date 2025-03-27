@@ -1,0 +1,2 @@
+Source files for the code, please dont abuse this as it's a vulnerable exploit and may result in shutdowns (which means hunting for another site) and possible even result
+in the horrible fate of me being uninterested in keeping this up :D
