@@ -1,8 +1,10 @@
-# lanime
-A terminal anime client that uses 4anime as source.
+# 🌸 lanime 🌸
+A terminal anime client that can show information and stream anime directly from your client
 
 ## Current Features
-lanime can currently search for your desired anime and provide you a list of anime based on your search, and also provide episodes and their relevant watch links. Currently it cannot play anime in your terminal :(
+
+1. Stream anime from your terminal
+2. Find out about your favourite or new anime from your terminal
 
 ## Installation
 
@@ -25,11 +27,47 @@ python install.py
 ```
 this should handle the dependencies (and the dependencies' dependencies) for you and give you a go ahead message if everything went right
 
-## Usage
+## MPV
+MPV is a video streaming client that is required to run the streaming section. You can choose to opt out of downloading MPV as it is not part of install.py, but only do so if you do not want to stream anime and only look up information.
 
-### Run scrape.py
+1. For Linux:
+
+Debian/Ubuntu:
+```sh
+sudo apt install mpv
+```
+Arch/Manjaro:
+```sh
+sudo pacman -S mpv
+```
+Fedora:
+```sh
+sudo dnf install mpv
+```
+2. For MacOS:
 
 ```sh
-python scrape.py
+brew install mpv
 ```
-this should run the scraper and provide the relevant anime watch link 
+3. For Windows:
+
+   You have to install [MPV](https://mpv.io/installation/) and add the .exe to PATH
+
+## Usage
+
+### Run lanime.py
+
+```sh
+python lanime.py
+```
+### 1. Anime TUI
+
+![TUI](https://github.com/Arihasaheadache/lanime/blob/main/img/tui.png)
+
+### 2. Anime Information
+
+![DB](https://github.com/Arihasaheadache/lanime/blob/main/img/DBDB.png)
+
+### 3. Anime Streaming
+
+![Streaming](https://github.com/Arihasaheadache/lanime/blob/main/img/stream.png)
