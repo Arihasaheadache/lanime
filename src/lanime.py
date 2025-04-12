@@ -1,5 +1,6 @@
 import scrape
 import info
+import os
 
 ascii = """
 ⠤⠤⠤⠤⠤⠤⢤⣄⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -17,7 +18,16 @@ ascii = """
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠙⠛⠓⠒⠲⠿⢍⡀⠀⠀⠀⠀⠀
 """
 
-print("\033[H\033[J", end="")
+def clrscr():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
+#User viewable area
+
+clrscr()
 print("\n" + ascii)
 print("="*40)
 print("🌸  lanime: terminal anime client  🌸")
@@ -31,14 +41,18 @@ print("-"*40)
 choice = int(input("\nEnter your option: "))
 
 if choice == 1:
-    print("\033[H\033[J", end="")
+    clrscr()
     anime = input("Enter anime name to stream: ")
-    scrape.stream(anime)
+    title = scrape.get_anime_title(anime)
+    if not title:
+        print("No anime found. Please check internet connection or wait for anime to be added to database.")
+    else:
+        scrape.stream(anime, title)
 elif choice == 2:
-    print("\033[H\033[J", end="")
+    clrscr()
     anime = input("Enter anime to check: ")
     info.anime_db(anime)
 elif choice == 3:
-    print("\033[H\033[J", end="")
+    clrscr()
     print("Goodbye 🐽")
     exit()
