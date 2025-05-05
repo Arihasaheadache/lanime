@@ -37,10 +37,11 @@ def search_anime(anime, title):
         a_text_lower = a.text.lower()
         title_lower = title.lower()
 
-        #Replaces the (usually Japanese) title with your anime search result (Can be commented out if you are okay with actual title)
+        #By default it gives the original title, if you're sure about the anime name and dont want to see the original title, comment-decomment the other anime_results option
         if title_lower in a_text_lower:
             highlighted_text = re.sub(title_lower, anime, a.text, flags=re.IGNORECASE)
-            anime_results.append((highlighted_text, a['href']))
+            #anime_results.append((highlighted_text, a['href']))
+            anime_results.append((a.text, a['href'])
 
     return anime_results[:5]
 
@@ -79,8 +80,14 @@ def stream(anime, tit):
     lists = search_anime(anime, tit)
 
     if not lists:
-        print("No Anime Found, please check internet connection or wait for anime to be added to database.")
-        exit()
+        lists = search_anime(anime, anime)
+
+        if not lists:
+            print("No Anime Found, please check internet connection or wait for anime to be added to database.")
+            exit()
+        else:
+            for i, (title, link) in enumerate(lists):
+                print(f"{i + 1}. {title}")
     else:
         for i, (title, link) in enumerate(lists):
             print(f"{i + 1}. {title}")
