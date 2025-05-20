@@ -1,10 +1,10 @@
 # 🌸 lanime 🌸
-A terminal anime client that can show information and stream anime directly from your client
+An aesthetic anime client for your terminal
 
 ## Current Features
 
-1. Stream anime from your terminal
-2. Find out about your favourite or new anime from your terminal
+1. Stream anime 
+2. Find out about your favourite or new anime 
 
 ## Installation
 
@@ -25,7 +25,7 @@ cd lanime
 ```sh
 python install.py
 ```
-this should handle the dependencies (and the dependencies' dependencies) for you and give you a go ahead message if everything went right
+this should handle the dependencies for you and give you a go ahead message if everything went right
 
 ## MPV
 MPV is a video streaming client that is required to run the streaming section. You can choose to opt out of downloading MPV as it is not part of install.py, but only do so if you do not want to stream anime and only look up information.
@@ -62,12 +62,26 @@ python lanime.py
 ```
 ### 1. Anime TUI
 
-![TUI](https://github.com/Arihasaheadache/lanime/blob/main/img/tui.png)
+![TUI](https://github.com/Arihasaheadache/lanime/blob/main/img/startpage.png)
+
+Upon running, the terminal will show the above as the starting TUI
 
 ### 2. Anime Information
 
-![DB](https://github.com/Arihasaheadache/lanime/blob/main/img/DBDB.png)
+![DB](https://github.com/Arihasaheadache/lanime/blob/main/img/information.png)
+
+On running option 2 from TUI, you can get information about your favourite anime
 
 ### 3. Anime Streaming
 
-![Streaming](https://github.com/Arihasaheadache/lanime/blob/main/img/stream.png)
+![Streaming](https://github.com/Arihasaheadache/lanime/blob/main/img/s1.png)
+
+Upon running option 1, you can start watching your favourite anime by selecting the title you'd like...
+
+![Streaming](https://github.com/Arihasaheadache/lanime/blob/main/img/s2.png)
+
+..picking the episode you'd like to watch...
+
+![Streaming](https://github.com/Arihasaheadache/lanime/blob/main/img/s3.png)
+
+And let lanime handle the rest!
